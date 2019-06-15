@@ -2,7 +2,7 @@
 > This project contains 5 APIs 
 > which can be used to CREATE, READ, UPDATE, DELETE Team Members
 > The URL will be `/team/` , GET, POST, PUT & DELETE are the exposed methods.
-> To get Team Mmeber by ID, the URL will be `/team/?member_id=<int>`
+> To get Team Member by ID, the URL will be `/team/?member_id=<int>`
 
 ### Tech
 * Python
@@ -21,17 +21,21 @@ Run the following query to change your plugin from `chaching_sha2_password` to `
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<your_password>';
 ```
 
+### MySQL Mac Specific Settings
+1) You need to install `mysql-connector-c` by `brew install mysql-connector-c`.
+2) You may need to `brew unlink mysql` to let `mysql-connector-c` get installed.
+3) You can link mysql back using `brew link mysql`.
 
 ### Installation
 1) Make sure you have Python-3.6 installed
-2) Python3 needs `mysql-connector-c` to be installed by `brew` if you are on **mac**
-3) Open your MySQL server and run this command:
-4) Clone the repo
-5) Create a venv `python3 -m venv venv; source venv/bin/activate`
-6) Install the requirements `pip3 install -r requirements.txt`
-7) Edit the `config.py` file with your `user`, `password`, `mysql_host`, `port` to make this code connect to the right database;
-8) Run `python3 manage.py migrate` to create the required tables.
-9) Finally, run the server with `python3 manage.py runserver`
+2) Clone the repo
+3) Create a venv `python3 -m venv venv`
+4) Activate it. `source venv/bin/activate`
+4) Install the requirements `pip3 install -r requirements.txt`
+5) Make sure the above command is able to install all the requirements without any error.
+6) Edit the `config.py` file with your `user`, `password`, `mysql_host`, `port` to make this code connect to the right database;
+7) Run `python3 manage.py migrate` to create the required tables.
+8) Finally, run the server with `python3 manage.py runserver`
 
 ### Exposed End Points
 `curl -X GET http://localhost:8000/team/`
