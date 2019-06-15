@@ -3,7 +3,7 @@ import uuid
 
 class Member(models.Model):
 	"""
-	
+	This class specifies the Attributes of a Team Member object.
 	"""
 	firstName = models.CharField(max_length=200, null=False, blank=False)
 	lastName = models.CharField(max_length=200, null=False, blank=False)

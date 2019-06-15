@@ -22,7 +22,7 @@ class RoleChoicesField(serializers.Field):
 class MemberSerializer(serializers.Serializer):
 	"""
 	This class will be used to serialize/deserialize MemberObject data.
-	It also has create and update function which will be used by thr POST and
+	It also has create and update function which will be used by the POST and
 	PUT request respectively.
 	"""
 	id = serializers.IntegerField(required=False)
